@@ -28,7 +28,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          pip install flake8==6.0.0 flake8-isort==6.0.0
+          # Исправление: добавлен setuptools и сняты жесткие версии для совместимости с Python 3.12
+          pip install flake8 flake8-isort setuptools
           pip install -r ./backend/requirements.txt
       - name: Test with flake8 and django tests
         env:
